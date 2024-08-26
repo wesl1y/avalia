@@ -4,6 +4,11 @@
     <a href="{{ route('home') }}">Home</a>
     <h2>Login</h2>
 
+    @if (session()->has('status'))
+    <span>{{ session()->get('status') }}</span>
+
+    @endif
+
     <form action="{{ route('login.auth') }}" method="POST">
         @csrf
         <input type="text" name="email" id="email" value="suitec@suitec.com.br">
