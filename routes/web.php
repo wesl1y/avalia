@@ -22,8 +22,6 @@ Route::post('/reset-password', function (Request $request) {
         function (User $user, string $password) {
             $user->password = Hash::make($password);
             $user->save();
-
-            event(new PasswordReset($user));
         }
     );
 
