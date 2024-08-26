@@ -26,6 +26,7 @@ class User extends Authenticatable
         'city',
         'phone',
         'email',
+        'permission_id',
         'password',
     ];
 
@@ -60,5 +61,10 @@ class User extends Authenticatable
     public function axes()
     {
         return $this->hasMany(Axe::class);
+    }
+
+    public function permission()
+    {
+        return $this->belongsTo(Permission::class, 'permission_id');
     }
 }
