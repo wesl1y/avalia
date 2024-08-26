@@ -21,6 +21,6 @@ class passwordWasReset
      */
     public function handle(PasswordReset $event): void
     {
-        dd($event->user->email);
+
     }
 }

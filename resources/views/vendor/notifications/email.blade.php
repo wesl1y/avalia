@@ -37,7 +37,8 @@
 
 {{-- Salutation --}}
 @if (! empty($salutation))
-{{ $salutation }}
+{{ $salutation }}<br>
+Sistema de avaliação
 @else
 @lang('Regards,')<br>
 {{ config('app.name') }}
@@ -47,8 +48,8 @@
 @isset($actionText)
 <x-slot:subcopy>
 @lang(
-    "If you're having trouble clicking the \":actionText\" button, copy and paste the URL below\n".
-    'into your web browser:',
+    "Se você estiver tendo problemas para clicar no botão \":actionText\" copie e cole o URL abaixo\n".
+    'em seu navegador:',
     [
         'actionText' => $actionText,
     ]

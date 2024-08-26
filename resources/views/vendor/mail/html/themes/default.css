@@ -112,9 +112,9 @@ img {
 /* Logo */
 
 .logo {
-    height: 75px;
-    max-height: 75px;
-    width: 75px;
+    height: auto;
+    max-height: 200px;
+    width: 100px;
 }
 
 /* Body */
@@ -232,11 +232,11 @@ img {
 
 .button-blue,
 .button-primary {
-    background-color: #2d3748;
-    border-bottom: 8px solid #2d3748;
-    border-left: 18px solid #2d3748;
-    border-right: 18px solid #2d3748;
-    border-top: 8px solid #2d3748;
+    background-color: #005CA9;
+    border-bottom: 8px solid #005CA9;
+    border-left: 18px solid #005CA9;
+    border-right: 18px solid #005CA9;
+    border-top: 8px solid #005CA9;
 }
 
 .button-green,
