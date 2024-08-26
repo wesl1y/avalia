@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layout.master')
 
 @section('content')
     <a href="{{ route('login.index') }}">Login</a>

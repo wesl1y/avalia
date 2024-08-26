@@ -12,7 +12,7 @@ class AuthController extends Controller
     {
         return view('login');
     }
-    public function auth(Request $request): RedirectResponse
+    public function login(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -29,4 +29,14 @@ class AuthController extends Controller
             'email' => 'Email Ou senha incorretos.',
         ])->onlyInput('email');
     }
+
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
 }
