@@ -15,18 +15,23 @@ return new class extends Migration
             $table->id();
             $table->string('first_name', 255);
             $table->string('second_name', 255);
-            $table->string('cpf')->unique();
-            $table->integer('registration');
-            $table->string('position', 255);
-            $table->string('capacity', 255);
+            $table->string('cpf', 255)->unique();
+            $table->integer('registration')->nullable(); // Para usuários não avaliadores, pode ser nulo
+            $table->string('position', 255)->nullable(); // Para usuários não avaliadores, pode ser nulo
+            $table->string('capacity', 255)->nullable(); // Para usuários não avaliadores, pode ser nulo
+            $table->string('education', 255)->nullable(); // Específico para avaliadores
+            $table->string('state', 255)->nullable(); // Específico para avaliadores
             $table->string('city', 255);
-            $table->string('phone');
+            $table->string('bond', 255)->nullable(); // Específico para avaliadores
+            $table->string('phone', 20);
             $table->string('email')->unique();
+            $table->foreignId('permission_id')->constrained('permissions')->cascadeOnDelete();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

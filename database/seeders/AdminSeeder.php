@@ -24,6 +24,7 @@ class AdminSeeder extends Seeder
             'city' => 'MACEIÓ',
             'phone' => 82981739990,
             'email' => 'suitec@suitec.com.br',
+            'permission_id' => 2,
             'password' => Hash::make('s3duc@suitec'),
         ]);
     }

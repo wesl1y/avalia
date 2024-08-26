@@ -52,11 +52,6 @@ class User extends Authenticatable
         ];
     }
 
-    public function evaluators()
-    {
-        return $this->hasMany(Evaluator::class);
-    }
-
     public function reviews()
     {
         return $this->hasMany(Review::class);

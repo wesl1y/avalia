@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('evaluation_instrument', 255);
             $table->integer('status');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('evaluator_id')->constrained('evaluators')->cascadeOnDelete();
             $table->timestamps();
         });
     }

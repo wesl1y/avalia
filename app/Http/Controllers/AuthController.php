@@ -12,7 +12,7 @@ class AuthController extends Controller
     {
         return view('login');
     }
-    public function authenticate(Request $request): RedirectResponse
+    public function auth(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],

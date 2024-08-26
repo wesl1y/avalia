@@ -21,10 +21,5 @@ class Axe extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-
-    public function evaluator()
-    {
-        return $this->belongsTo(Evaluator::class, 'evaluator_id');
-    }
 }
 

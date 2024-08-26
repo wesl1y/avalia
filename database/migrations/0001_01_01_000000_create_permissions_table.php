@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('axes', function (Blueprint $table) {
+        Schema::create('permissions', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->integer('number');
-            $table->boolean('status')->default(true);
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->string('permission_type');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('axes');
+        Schema::dropIfExists('permissions');
     }
 };
