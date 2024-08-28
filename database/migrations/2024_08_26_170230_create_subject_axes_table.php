@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('axes', function (Blueprint $table) {
+        Schema::create('subject_axes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->string('subject_axle', 255);
+            $table->foreignId('axle_id')->constrained('axes')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('axes');
+        Schema::dropIfExists('subject_axes');
     }
 };

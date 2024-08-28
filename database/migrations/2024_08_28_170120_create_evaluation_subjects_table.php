@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('axes', function (Blueprint $table) {
+        Schema::create('evaluation_subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->string('evaluation_instrument', 255);
+            $table->integer('evaluation_note')->default(null);
+            $table->foreignId('evaluation_id')->constrained('evaluations')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('axes');
+        Schema::dropIfExists('evaluation_subjects');
     }
 };
